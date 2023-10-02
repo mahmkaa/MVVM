@@ -13,6 +13,10 @@
 		EA86D5BB2ACAEA8A00A07E3E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA86D5B92ACAEA8A00A07E3E /* Main.storyboard */; };
 		EA86D5BD2ACAEA8B00A07E3E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA86D5BC2ACAEA8B00A07E3E /* Assets.xcassets */; };
 		EA86D5C02ACAEA8B00A07E3E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA86D5BE2ACAEA8B00A07E3E /* LaunchScreen.storyboard */; };
+		EA86D5CB2ACAEBBC00A07E3E /* CameraViewModeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA86D5CA2ACAEBBB00A07E3E /* CameraViewModeProtocol.swift */; };
+		EA86D5CE2ACAECBA00A07E3E /* CameraMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA86D5CD2ACAECBA00A07E3E /* CameraMode.swift */; };
+		EA86D5D02ACAED7B00A07E3E /* CameraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA86D5CF2ACAED7B00A07E3E /* CameraViewModel.swift */; };
+		EA86D5D32ACAEE5400A07E3E /* DBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA86D5D22ACAEE5400A07E3E /* DBService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		EA86D5BC2ACAEA8B00A07E3E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EA86D5BF2ACAEA8B00A07E3E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EA86D5C12ACAEA8B00A07E3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EA86D5CA2ACAEBBB00A07E3E /* CameraViewModeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewModeProtocol.swift; sourceTree = "<group>"; };
+		EA86D5CD2ACAECBA00A07E3E /* CameraMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraMode.swift; sourceTree = "<group>"; };
+		EA86D5CF2ACAED7B00A07E3E /* CameraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewModel.swift; sourceTree = "<group>"; };
+		EA86D5D22ACAEE5400A07E3E /* DBService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +64,59 @@
 		EA86D5B22ACAEA8A00A07E3E /* MVVM */ = {
 			isa = PBXGroup;
 			children = (
-				EA86D5B32ACAEA8A00A07E3E /* AppDelegate.swift */,
-				EA86D5B52ACAEA8A00A07E3E /* SceneDelegate.swift */,
-				EA86D5B72ACAEA8A00A07E3E /* ViewController.swift */,
-				EA86D5B92ACAEA8A00A07E3E /* Main.storyboard */,
-				EA86D5BC2ACAEA8B00A07E3E /* Assets.xcassets */,
-				EA86D5BE2ACAEA8B00A07E3E /* LaunchScreen.storyboard */,
-				EA86D5C12ACAEA8B00A07E3E /* Info.plist */,
+				EA86D5D12ACAEE1C00A07E3E /* Service */,
+				EA86D5CC2ACAECA300A07E3E /* Models */,
+				EA86D5C72ACAEAC600A07E3E /* Application */,
+				EA86D5C92ACAEB4A00A07E3E /* Camera */,
+				EA86D5C82ACAEAF500A07E3E /* Resources */,
 			);
 			path = MVVM;
+			sourceTree = "<group>";
+		};
+		EA86D5C72ACAEAC600A07E3E /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				EA86D5B32ACAEA8A00A07E3E /* AppDelegate.swift */,
+				EA86D5B52ACAEA8A00A07E3E /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		EA86D5C82ACAEAF500A07E3E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				EA86D5BE2ACAEA8B00A07E3E /* LaunchScreen.storyboard */,
+				EA86D5BC2ACAEA8B00A07E3E /* Assets.xcassets */,
+				EA86D5C12ACAEA8B00A07E3E /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		EA86D5C92ACAEB4A00A07E3E /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				EA86D5B72ACAEA8A00A07E3E /* ViewController.swift */,
+				EA86D5B92ACAEA8A00A07E3E /* Main.storyboard */,
+				EA86D5CA2ACAEBBB00A07E3E /* CameraViewModeProtocol.swift */,
+				EA86D5CF2ACAED7B00A07E3E /* CameraViewModel.swift */,
+			);
+			path = Camera;
+			sourceTree = "<group>";
+		};
+		EA86D5CC2ACAECA300A07E3E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EA86D5CD2ACAECBA00A07E3E /* CameraMode.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		EA86D5D12ACAEE1C00A07E3E /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				EA86D5D22ACAEE5400A07E3E /* DBService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +190,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA86D5CE2ACAECBA00A07E3E /* CameraMode.swift in Sources */,
 				EA86D5B82ACAEA8A00A07E3E /* ViewController.swift in Sources */,
 				EA86D5B42ACAEA8A00A07E3E /* AppDelegate.swift in Sources */,
+				EA86D5D32ACAEE5400A07E3E /* DBService.swift in Sources */,
+				EA86D5CB2ACAEBBC00A07E3E /* CameraViewModeProtocol.swift in Sources */,
 				EA86D5B62ACAEA8A00A07E3E /* SceneDelegate.swift in Sources */,
+				EA86D5D02ACAED7B00A07E3E /* CameraViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,7 +350,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 532T45L6HD;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MVVM/Info.plist;
+				INFOPLIST_FILE = MVVM/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -322,7 +378,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 532T45L6HD;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MVVM/Info.plist;
+				INFOPLIST_FILE = MVVM/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
